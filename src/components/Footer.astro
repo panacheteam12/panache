@@ -1,0 +1,108 @@
+---
+---
+<footer>
+  <div class="footer-container">
+    <!-- Logo og navn -->
+    <div class="foten1">
+      <a href="/" class="bilde_logo">
+        <img class="footer_img" src="/public/bilder/panachelogo.png" alt="logo" />
+      </a>
+      <h2 class="footer-title">PANACHE CPH - ESTABLISHED 2024</h2>
+      <p class="footer-address">Guldbergsgade 23, Copenhagen 2200</p>
+    </div>
+
+    <!-- Ikoner -->
+    <div class="logo_grid">
+      <a href="https://www.instagram.com/panachecph/">
+        <img src="/public/bilder/vector-footer.png" alt="Instagram ikon" class="footer-icon" />
+      </a>
+      <a href="https://www.instagram.com/panachecph/">
+        <img src="/public/bilder/mail-footer.png" alt="Mail ikon" class="footer-icon" />
+      </a>
+      <a href="https://www.instagram.com/panachecph/">
+        <img src="/public/bilder/maps-footer.png" alt="Kart ikon" class="footer-icon" />
+      </a>
+    </div>
+
+    <!-- Tekst nederst -->
+    <div class="gridf3">
+      <p class="footer-rights">2024. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  /********** FOOTER **********/
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  footer {
+    background-color: #fbf8f1; /* Lys beige farge */
+    padding: 40px 20px;
+    text-align: center;
+  
+    color: #000; /* Svart tekst */
+  }
+
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  /* Logo */
+  .bilde_logo img {
+
+    width: 100px;
+    margin-bottom: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+  .footer_img {
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Tittel */
+  .footer-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ab0000; /* Mørk rød farge */
+    margin: 10px 0;
+  }
+
+  /* Adresse */
+  .footer-address {
+    font-size: 1rem;
+    color: #000;
+    margin-bottom: 20px;
+  }
+
+  /* Ikoner */
+  .logo_grid {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .footer-icon {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+  }
+
+  .footer-icon:hover {
+    transform: scale(1.1); /* Ikoner forstørres litt ved hover */
+  }
+
+  /* Rettighetstekst */
+  .footer-rights {
+    font-size: 0.9rem;
+    color: #000;
+  }
+</style>

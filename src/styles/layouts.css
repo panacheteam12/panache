@@ -1,0 +1,24 @@
+body {
+  display: grid;
+  background-color: #fbf8f1;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100svh;
+  font-family: "Noto Sans Mono", serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+main {
+  max-width: 1200px;
+  width: 100%;
+  margin-inline: auto;
+}
+a {
+  text-decoration: none;
+  color: #ab0000;
+}
+a:hover {
+  color: #000000;
+}

@@ -1,0 +1,122 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+//to make it dynamic
+export async function getStaticPaths() {
+  const data = await fetch(
+    `https://mofblnsgwolupthqiwwn.supabase.co/rest/v1/vin_panache?select=*`,
+    {
+      method: "GET",
+      headers: {
+        apikey:
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1vZmJsbnNnd29sdXB0aHFpd3duIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzMyMzQ3MjUsImV4cCI6MjA0ODgxMDcyNX0.LMFHaUuQ3k7Zjn8e9Zpu3BijbGquG7eQmEjuqPV3-JU",
+      },
+    }
+  ).then((res) => res.json());
+
+  return data.map((product) => ({
+    params: { slug: product.id },
+    props: { product },
+  }));
+}
+
+const { product } = Astro.props;
+
+console.log(product);
+---
+
+<MainLayout metatitle={product.Navn}>
+    <h1>WINE</h1>
+       <div class="line"></div>
+
+ <div class="product-container">
+  <div class="image-container">
+  <img src={product.imageURL} alt="img" />
+</div>
+  <div class="text-container">
+      <h2>{product.Name}</h2>
+      <p>{product.Winetype}</p>
+      <p class="Land">{product.Country}</p>
+      <p class="Year">{product.Year}</p>
+      <p class="Info">{product.Info}</p>
+      <p class="Pris">{product.Price}</p>
+    </div>
+  </div>
+</MainLayout>
+
+<style>
+  .line {
+    width: 80%;
+    height: 1px;
+    background-color: black;
+    margin: 20px auto;
+  }
+
+  h1 {
+    text-align: center;
+}
+
+  h2 {
+    color: #ab0000;
+    margin-bottom: 10px;
+  }
+
+  p {
+    color: #000;
+    margin-bottom: 10px;
+  }
+  .pris {
+    color: #000;
+    margin-top: 3rem;
+    font-weight:bold;
+}
+
+  /* Container for bilde og tekst */
+  .product-container {
+    display: flex;
+    align-items: flex-start; 
+    gap: 20px; 
+    padding: 1rem;
+  }
+
+  .image-container {
+    flex: 1; 
+  }
+
+  .image-container img {
+    width: 100%; 
+    max-width: 500px; 
+    height: auto;
+    display: block;
+  }
+
+  .text-container {
+    flex: 2; 
+  }
+ @media (max-width: 800px) {
+  .image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+  }
+  .image-container img {
+    width: 90%;
+  }
+ h2 {
+        color:#ab0000;
+        margin-left: 2rem;
+    }
+  p {
+        color: #000;
+         margin-left: 2rem;
+         margin-right: 2rem;
+         margin-top: 0.5rem;
+    }
+.pris {
+     color: #000;
+         margin-left: 2rem;
+         margin-top: 3rem;
+         font-weight:bold;
+}
+}
+</style>

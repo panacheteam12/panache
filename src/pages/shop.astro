@@ -1,0 +1,92 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Card from "../components/Card.astro";
+
+// Hent data fra Supabase
+const data = await fetch(
+  "https://mofblnsgwolupthqiwwn.supabase.co/rest/v1/vin_panache?select=*",
+  {
+    method: "GET",
+    headers: {
+      apikey:
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1vZmJsbnNnd29sdXB0aHFpd3duIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzMyMzQ3MjUsImV4cCI6MjA0ODgxMDcyNX0.LMFHaUuQ3k7Zjn8e9Zpu3BijbGquG7eQmEjuqPV3-JU",
+    },
+  }
+).then((res) => res.json());
+
+// Sorter vinene basert på "Wine type"
+const sparklingWines = data.filter((wine) => wine["Winetype"]?.toLowerCase() === "sparkling");
+const orangeWines = data.filter((wine) => wine["Winetype"]?.toLowerCase() === "orange");
+const whiteWines = data.filter((wine) => wine["Winetype"]?.toLowerCase() === "white");
+const redWines = data.filter((wine) => wine["Winetype"]?.toLowerCase() === "red");
+
+console.log({ sparklingWines, orangeWines, whiteWines, redWines });
+---
+
+<MainLayout metatitle="Vin">
+
+    <h1>SPARKLING WINE</h1>
+    <div class="line"></div>
+    <section>
+        {sparklingWines.map((product) => (
+            <Card {...product} />
+        ))}
+    </section>
+
+    <h1>ORANGE WINE</h1>
+    <div class="line"></div>
+    <section>
+        {orangeWines.map((product) => (
+            <Card {...product} />
+        ))}
+    </section>
+
+    <h1>WHITE WINE</h1>
+    <div class="line"></div>
+    <section>
+        {whiteWines.map((product) => (
+            <Card {...product} />
+        ))}
+    </section>
+
+    <h1>RED WINE</h1>
+    <div class="line"></div>
+    <section>
+        {redWines.map((product) => (
+            <Card {...product} />
+        ))}
+    </section>
+
+</MainLayout>
+
+<style>
+  .line {
+    width: 80%;
+    height: 1px;
+    background-color: black;
+    margin: 20px auto;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  section {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  a {
+    text-decoration: none;
+    color: #AB0000;
+  }
+
+  @media (max-width: 800px) {
+    section {
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 2rem;
+      margin: 1rem;
+    }
+  }
+</style>

@@ -1,0 +1,178 @@
+---
+---
+<header>
+  <div class="logo">
+    <a href="/">
+      <h2>PANACHE CPH</h2>
+      <img src="/public/bilder/panachelogo.png" alt="Logo" />
+    </a>
+  </div>
+
+  <nav>
+    <ul class="menu">
+      <li><a href="/gallery">Gallery</a></li>
+      <li><a href="/shop">Wine</a></li>
+      <li><a href="/tattoo">Tattoo</a></li>
+      <li><a href="/about">About</a></li>
+      <li>
+        <a href="https://www.instagram.com/panachecph/">
+          <img src="/public/bilder/vector.png" alt="Instagram" class="social-icon" />
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="burger" id="burger-menu">
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+  </div>
+</header>
+
+<style>
+  /********** GLOBAL STYLE **********/
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+ 
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #fbf8f1; /* Lys beige */
+    position: relative;
+  }
+
+  a {
+    text-decoration: none;
+    color: #AB0000;
+  }
+
+  /********** LOGO **********/
+  .logo {
+    display: flex;
+    align-items: center; /* Sørger for at tekst og bilde er på samme linje */
+    gap: 10px; /* Mellomrom mellom teksten og bildet */
+  }
+
+  .logo a {
+    display: flex;
+    align-items: center; /* Sørger for at innholdet i lenken er på samme linje */
+  }
+
+  .logo h2 {
+    font-size: 1.5rem;
+    color: #AB0000;
+    margin: 0;
+    white-space: nowrap; /* Sørger for at teksten ikke brytes */
+  }
+
+  .logo img {
+    width: 50px;
+    height: auto; /* Bevarer forholdet til bildet */
+  }
+
+  /********** NAVIGATION MENU **********/
+  nav {
+    display: flex;
+    align-items: center;
+  }
+
+  .menu {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+  }
+
+  .menu li {
+    display: inline-block;
+  }
+
+  .menu a {
+    font-size: 1rem;
+    color: #AB0000;
+    transition: color 0.3s;
+  }
+
+  .menu a:hover {
+    color: #900; /* Mørkere rød ved hover */
+  }
+
+  .social-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  /********** BURGER MENU **********/
+  .burger {
+    display: none; /* Skjult på desktop */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+  }
+
+  .burger .line {
+    height: 3px;
+    width: 100%;
+    background-color: #AB0000;
+  }
+
+  /********** RESPONSIVE DESIGN **********/
+  @media (max-width: 800px) {
+    .menu {
+      display: none; /* Skjult på mobil */
+      flex-direction: column;
+      position: absolute;
+      top: 70px;
+      right: 0;
+      background-color: #fbf8f1fa;
+      opacity: 95%;
+      width: 100%;
+      padding: 20px;
+      gap: 15px;
+      text-align: center;
+      box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+      
+    }
+
+    .menu.active {
+      display: flex;
+    }
+
+    .burger {
+      display: flex; /* Vises på mobil */
+    }
+
+    .menu li {
+      margin: 0;
+     
+    }
+
+    .menu a {
+      font-size: 1.2rem;
+    }
+
+    .social-icon {
+      width: 25px;
+      height: 25px;
+    }
+  }
+</style>
+
+<script>
+  // JavaScript for å toggl'e menyen
+  const burger = document.getElementById('burger-menu');
+  const menu = document.querySelector('.menu');
+
+  burger.addEventListener('click', () => {
+    menu.classList.toggle('active');
+    burger.classList.toggle('active');
+  });
+</script>
