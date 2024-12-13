@@ -34,15 +34,17 @@ console.log(product);
 </div>
   <div class="text-container">
       <h2>{product.Name}</h2>
+      <div class="tekst_singel">
       <p>{product.Winetype}</p>
       <p class="Land">{product.Country}</p>
       <p class="Year">{product.Year}</p>
       <p class="Info">{product.Info}</p>
-      <p class="Pris">{product.Price}</p>
+      <div class="pris">
+      <p class="Pris">{product.Price}</p></div>
+      </div>
     </div>
   </div>
 </MainLayout>
-
 <style>
   .line {
     width: 80%;
@@ -50,6 +52,11 @@ console.log(product);
     background-color: black;
     margin: 20px auto;
   }
+.tekst_singel {
+    padding-left: 2rem;
+    margin-top: 5rem;
+}
+
 
   h1 {
     text-align: center;
@@ -58,6 +65,7 @@ console.log(product);
   h2 {
     color: #ab0000;
     margin-bottom: 10px;
+    padding-left: 2rem;
   }
 
   p {
@@ -68,6 +76,8 @@ console.log(product);
     color: #000;
     margin-top: 3rem;
     font-weight:bold;
+    margin-top: 8rem;
+    font-size: 1.3rem;
 }
 
   /* Container for bilde og tekst */

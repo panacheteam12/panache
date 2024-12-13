@@ -1,4 +1,5 @@
 ---
+import Buttum from "./Buttum.astro";
 const { imageURL, Name, Year, Country, id, Price, info } = Astro.props;
 
 if (!id) {
@@ -14,11 +15,14 @@ if (!id) {
   ) : (
     <p>Image not available</p>
   )}
+  
   <h3>{Name ?? "Ukjent navn"}</h3>
   <p>Year: {Year ?? "Ikke oppgitt"}</p>
   <p>Country: {Country ?? "Ukjent land"}</p>
   <p>Price: {Price ?? "Ukjent pris"}</p>
-  <a href={`/product/${id}`}>SEE MORE</a>
+<a href={`/product/${id}`}>
+        <Buttum text="SEE MORE"></Button>
+      </a>
 
 </article>
 <style>
