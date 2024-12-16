@@ -7,57 +7,78 @@ if (!id) {
 }
 ---
 
-<article>
+<article class="product-card">
   {imageURL ? (
     <div class="img_vin">
-    <img src={imageURL} alt={`Bilde av ${Name}`} />
+      <img src={imageURL} alt={`Bilde av ${Name}`} />
     </div>
   ) : (
     <p>Image not available</p>
   )}
-  
-  <h3>{Name ?? "Ukjent navn"}</h3>
-  
-  <p>Year: {Year ?? "Ikke oppgitt"}</p>
-  <p>Country: {Country ?? "Ukjent land"}</p>
-  <p>Price: {Price ?? "Ukjent pris"}</p>
-  <div class="knapp">
-<a href={`/product/${id}`}>
-        <Buttum text="READ MORE"></Button>
+ 
+  <div class="content">
+    <h3>{Name ?? "Ukjent navn"}</h3>
+    <p>Year: {Year ?? "Ikke oppgitt"}</p>
+    <p>Country: {Country ?? "Ukjent land"}</p>
+    <p>Price: {Price ?? "Ukjent pris"}</p>
+    <div class="knapp">
+      <a href={`/product/${id}`}>
+        <Buttum text="READ MORE"></Buttum>
       </a>
-</div>
+    </div>
+  </div>
 </article>
 <style>
-     @media (min-width: 800px) {
-img {
-height: 650px;
-object-fit: cover;
-object-fit: bottom;
-}
-h3 {
-    padding-top: 1rem;
-    font-size: 1.3rem;
-}
-.knapp {
-    padding-top: 2rem;
-    object-fit: cover;
-object-fit: bottom;
+
+.product-card {
+  display: flex;
+  flex-direction: column; 
+  justify-content: space-between; 
+  height: 100%; 
+  border: 1px solid 
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
-     }
-      @media (max-width: 800px) {
-img {
-height: 300px;
-object-fit: cover;
-object-fit: bottom;
+/* Bildet */
+.img_vin img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
-h3 {
-    padding-top: 1rem;
-    font-size: 1.3rem;
+
+/* Tekst og knapp */
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  flex-grow: 1; 
 }
+
 .knapp {
-    padding-top: 2rem;
- 
+  margin-top: auto; /* Skyver knappen til bunnen */
+  margin-top: 1rem;
 }
-      }
+
+
+@media (max-width: 800px) {
+  .product-card {
+    height: auto; 
+  }
+
+  .img_vin img {
+    height: 300px; 
+    object-fit: cover;
+  }
+}
+
+@media (min-width: 800px) {
+  .img_vin img {
+    height: 650px; 
+    object-fit: cover;
+  }
+}
+ 
+
+      
 </style>
