@@ -39,9 +39,15 @@ console.log(product);
       <p class="Land">{product.Country}</p>
       <p class="Year">{product.Year}</p>
       <p class="Info">{product.Info}</p>
-      <div class="pris">
+     
+    
+    
+     <div class="pris">
       <p class="Pris">{product.Price}</p></div>
       </div>
+      <div class="styrke">
+    <img src="/public/bilder/styrke.png" alt="">
+    </div>
     </div>
   </div>
 </MainLayout>
@@ -52,34 +58,13 @@ console.log(product);
     background-color: black;
     margin: 20px auto;
   }
-.tekst_singel {
-    padding-left: 2rem;
-    margin-top: 5rem;
-}
-
-
-  h1 {
+ h1 {
     text-align: center;
 }
-
-  h2 {
-    color: #ab0000;
-    margin-bottom: 10px;
-    padding-left: 2rem;
-  }
-
-  p {
-    color: #000;
-    margin-bottom: 10px;
-  }
-  .pris {
-    color: #000;
-    margin-top: 3rem;
-    font-weight:bold;
-    margin-top: 8rem;
-    font-size: 1.3rem;
+.styrke {
+    margin: 2rem;
 }
-
+ @media (min-width: 800px) {
   /* Container for bilde og tekst */
   .product-container {
     display: flex;
@@ -102,6 +87,32 @@ console.log(product);
   .text-container {
     flex: 2; 
   }
+  .tekst_singel {
+    padding-left: 2rem;
+    margin-top: 5rem;
+}
+
+
+ 
+
+  h2 {
+    color: #ab0000;
+    margin-bottom: 10px;
+    padding-left: 2rem;
+  }
+
+  p {
+    color: #000;
+    margin-bottom: 10px;
+  }
+  .pris {
+    color: #000;
+    margin-top: 3rem;
+    font-weight:bold;
+    margin-top: 3rem;
+    font-size: 1.3rem;
+}
+}
  @media (max-width: 800px) {
   .image-container {
     display: flex;
@@ -124,9 +135,15 @@ console.log(product);
     }
 .pris {
      color: #000;
-         margin-left: 2rem;
+        
          margin-top: 3rem;
          font-weight:bold;
+         font-size: 1.3rem;
+   
+}
+ .tekst_singel {
+   
+    margin-top: 4rem;
 }
 }
 </style>

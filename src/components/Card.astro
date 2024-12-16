@@ -17,18 +17,43 @@ if (!id) {
   )}
   
   <h3>{Name ?? "Ukjent navn"}</h3>
-  <p>Year: {Year ?? "Ikke oppgitt"}</p>
+  
+  <!-- <p>Year: {Year ?? "Ikke oppgitt"}</p>
   <p>Country: {Country ?? "Ukjent land"}</p>
-  <p>Price: {Price ?? "Ukjent pris"}</p>
+  <p>Price: {Price ?? "Ukjent pris"}</p> -->
+  <div class="knapp">
 <a href={`/product/${id}`}>
-        <Buttum text="SEE MORE"></Button>
+        <Buttum text="READ MORE"></Button>
       </a>
-
+</div>
 </article>
 <style>
+     @media (min-width: 800px) {
 img {
 height: 650px;
 object-fit: cover;
 object-fit: bottom;
 }
+h3 {
+    padding-top: 1rem;
+    font-size: 1.3rem;
+}
+.knapp {
+    padding-top: 2rem;
+}
+     }
+      @media (max-width: 800px) {
+img {
+height: 300px;
+object-fit: cover;
+object-fit: bottom;
+}
+h3 {
+    padding-top: 1rem;
+    font-size: 1.3rem;
+}
+.knapp {
+    padding-top: 2rem;
+}
+      }
 </style>
