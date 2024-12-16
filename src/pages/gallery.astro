@@ -4,7 +4,7 @@ import Buttum from "../components/Buttum.astro";
 ---
 
 <MainLayout metatitle="GALLERY">
-  <div class="gallery_heading1"><h1>Gallery</h1></div>
+  <div class="gallery_heading1"><h1>GALLERY</h1></div>
   <div class="line"></div>
 
   <div class="gallery_box">
@@ -19,11 +19,12 @@ Send us an email if you're interested in showcasing your art in our bar for our 
 
 <br>
 <br>
+<div class="buttum">
 <a href="/shop">
 <Buttum text="SEND MAIL"/> </a>
 </div>
+</div>
   </div>
-
 
  <div class="gallery_heading2"><h1>WHERE EVERY WALLS TELLS A STORY</h1></div>
    <div class="line"></div>
@@ -41,11 +42,11 @@ This isn’t just a gallery; it’s where inspiration and individuality collide.
             <img src="/public/bilder/galleri_billeder/gal3.webp" alt="Image 3">
             <img src="/public/bilder/galleri_billeder/gal4.webp" alt="Image 4">
             <img src="/public/bilder/galleri_billeder/gal5.webp" alt="Image 5">
-            <img src="/public/bilder/galleri_billeder/gal5.webp" alt="Image 6">
-            <img src="/public/bilder/galleri_billeder/gal1.webp" alt="Image 7">
-            <img src="/public/bilder/galleri_billeder/gal2.webp" alt="Image 8">
-            <img src="/public/bilder/galleri_billeder/gal3.webp" alt="Image 9">
-            <img src="/public/bilder/galleri_billeder/gal4.webp" alt="Image 10">
+            <img src="/public/bilder/galleri_billeder/gal6.webp" alt="Image 6">
+            <img src="/public/bilder/galleri_billeder/gal7.webp" alt="Image 7">
+            <img src="/public/bilder/galleri_billeder/gal8.webp" alt="Image 8">
+            <img src="/public/bilder/galleri_billeder/gal9.webp" alt="Image 9">
+            <img src="/public/bilder/galleri_billeder/gal10.webp" alt="Image 10">
         </div>
     </div>
 
@@ -92,42 +93,9 @@ margin: 8%;
    background-color: black; 
    margin: 20px auto; 
 }
-  }
-/****DESKTOP VERSION****/
-@media (min-width: 800px){
-  .gallery_heading1{
-  text-align: center;
-}
-.line {
-   width: 70%; 
-   height: 1px; 
-   background-color: black; 
-   margin: 20px auto; 
-}
-.gallery_heading2{
-  text-align: center;
- padding-top: 10%;
-}
-.gallery_box{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  margin: 5%;
-}
-.gallery_text1{
-  padding-left: 6%;
-}
-.button_test{
-padding-top: 2%;
-
-}
-.gallery_text2{
-  margin: 5%;
-}
-}
 
 .slideshow {
- width: 80%;
+ width: 90%;
 overflow: hidden;
 margin: 0 auto;
 position: relative;
@@ -156,6 +124,78 @@ padding-bottom: 5%;
   90% { transform: translateX(-40%); }
   100% { transform: translateX(-50%); }
         }
+  }
+/****DESKTOP VERSION****/
+@media (min-width: 800px){
+  .gallery_heading1{
+  text-align: center;
+}
+
+.gallery_img{
+  width: 90%;
+}
+.line {
+   width: 70%; 
+   height: 1px; 
+   background-color: black; 
+   margin: 20px auto; 
+}
+.gallery_heading2{
+  text-align: center;
+ padding-top: 10%;
+}
+.gallery_box{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 5%;
+  align-items: start;
+}
+.gallery_text1{
+  padding-left: 6%;
+}
+.button_test{
+padding-top: 2%;
+
+}
+.gallery_text2{
+  margin: 5%;
+}
+
+
+.slideshow {
+ width: 40%;
+overflow: hidden;
+margin: 0 auto;
+position: relative;
+padding-bottom: 5%;
+}
+.slideshow #slider {
+  display: flex;
+  width: 1000%; /* 10 billeder, 100% per billede */
+  animation: slide 20s infinite;
+}
+
+.slideshow #slider img {
+  width: 10%; /* Juster bredden for at passe til 10 billeder */
+  flex-shrink: 0;
+        }
+@keyframes slide {
+  0% { transform: translateX(0); }
+  10% { transform: translateX(0); }
+  20% { transform: translateX(-10%); }
+  30% { transform: translateX(-10%); }
+  40% { transform: translateX(-20%); }
+  50% { transform: translateX(-20%); }
+  60% { transform: translateX(-30%); }
+  70% { transform: translateX(-30%); }
+  80% { transform: translateX(-40%); }
+  90% { transform: translateX(-40%); }
+  100% { transform: translateX(-50%); }
+        }
+
+}
+
 </style>
 <script>
 
