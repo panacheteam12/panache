@@ -1,251 +1,328 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-export const submitEndpoint = "/api/submit-tattoo-request"; 
 import Buttum from "../components/Buttum.astro";
+const imageSrc = '/path-to-your-image.jpg';
+const linkHref = '/your-link';
+const {text} = Astro.props;
+export const submitEndpoint = "/api/submit-tattoo-request"; // Replace with your backend endpoint
 ---
 
-<MainLayout metatitle="TATTOO">
-<!-- Overskrift, linje og tekst -->
-<div class="H1tattoo">
-    <h1>TATTOO ARTISTS</h1>
-</div>
-<div class="line"></div>
+<MainLayout metatitle="PANACHE">
+    <!-- Overskrift, linje og tekst -->
+    <div class="H1tattoo">
+        <h1>TATTOO ARTISTS</h1>
+    
+    <div class="line"></div>
+    </div>
 
-<p class="ptattoo">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore id a voluptas dolorum quas enim quaerat provident aliquam possimus quidem, minus molestias tempora aspernatur, sed maiores recusandae laboriosam nisi velit? Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae necessitatibus, aperiam autem tenetur eum error dolorum maxime architecto, nam, harum ipsa dolore. Consequatur dicta ab assumenda, fugiat veniam unde explicabo!
-</p>
+    <p class="ptattoo">
+        Step into Panache’s tattoo studio, where creativity meets individuality, and every design tells a story—yours!
+        With
+        three talented, resident tattoo artists, this is not your average tattoo joint. Our small but mighty team keeps
+        it
+        personal, keeping the vibe chill, inspiring, and brimming with creativity.
 
-<!-- Tattooo Artist / grdi_container -->
-<div class="grid-container">
-  <div>
-    <img src="/public/bilder/jacob.webp" alt="Descriptive Alt Text" class="image" />
-  </div>
-  <div class="text-content">
-    <h2>Jacob Max Moltke</h2>
-    <p>Your descriptive text goes here. You can write about the image or the topic in detail.</p>
-  <a href="/tattoo_gallery">
-<Buttum text="SEE MORE"/> </a>
-    <a href="https://www.instagram.com/maxmoltke/">
-          <img src="/public/bilder/vector.png" alt="Instagram" class="social-icon" />
+        Whether you're after something bold, intricate, or downright quirky, our artists are here to bring your vision
+        to life.
+        Each tattoo session is by appointment only because we believe in giving every masterpiece the time and attention
+        it
+        deserves. Slide into our DMs on Instagram to book your spot and let’s create something unforgettable!
+
+        At Panache, tattoos aren’t just ink—they’re art, memories, and a reflection of you. Plus, with wine and art just
+        steps
+        away, why not make it an all-day creative adventure?
+    </p>
+
+    <!-- Tattooo Artist / grdi_container -->
+    <div class="grid-container">
+        <div>
+            <img src="/public/bilder/jacob.webp" alt="Descriptive Alt Text" class="image" />
+        </div>
+        <div class="text-content">
+            <h2>Jacob Max Moltke</h2>
+            <p>Jacob isn’t just a tattoo artist; they’re a storyteller with a needle. Known for bold lines and striking
+                designs, Jacob
+                specializes in blackwork and abstract pieces that turn skin into wearable art. If you want a tattoo that
+                stands out and
+                sparks conversation, Jacob is your go-to. Whether it’s a minimalist statement or a full-sleeve
+                masterpiece, they’ll make
+                sure your ink speaks volumes.</p>
+
+            <div class="button-container">
+            
+        <Buttum text="@maxmoltke"></Button>
+      </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid-container middle-grid">
+        <div class="text-content">
+            <h2>Alistair</h2>
+            <p>Alistair is all about bringing color and fun to your tattoo dreams. From vibrant watercolor effects to
+                playful, illustrative
+                designs, Alistair´s swork is perfect for those who want their personality to shine through their ink.
+                With a love for bold
+                hues and creative storytelling, Alistair´ tattoos are as lively and unique as the clients who wear them.
+            </p>
+            
+                    <a href="https://www.instagram.com/alistairtattoos/">
+        <Buttum text="@alistairtattoos"></Button>
+      </a>
+            </div>
+        </div>
+        <div>
+            <img src="/public/bilder/alistair.webp" alt="Descriptive Alt Text" class="image" />
+        </div>
+    </div>
+
+    <div class="grid-container">
+        <div>
+            <img src="/public/bilder/anna.webp" alt="Descriptive Alt Text" class="image" />
+        </div>
+        <div class="text-content">
+            <h2>Anna Tietze Borregaard</h2>
+            <p>Anna is the queen of precision and detail. Her expertise lies in delicate fine-line tattoos, floral
+                motifs, and intricate
+                patterns. Looking for something elegant, soft, and timeless? Anna´s got you covered. Her steady hand and
+                artistic eye
+                bring even the smallest details to life, ensuring your tattoo feels personal and unique.</p>
+            <div class="button-container">
+               
+<a href="https://www.instagram.com/tatietzetoo/">
+        <Buttum text="@tatietzetoo"></Button>
+      </a>
+            </div>
+        </div>
         </a>
-  </div>
-</div>
+    </div>
+    </div>
 
-<div class="grid-container middle-grid">
-  <div class="text-content">
-    <h2>Alistair</h2>
-    <p>Your descriptive text goes here. You can write about the image or the topic in detail.</p>
-   <a href="/tattoo_gallery">
-<Buttum text="SEE MORE"/> </a>
-    <a href="https://www.instagram.com/alistairtattoos/">
-          <img src="/public/bilder/vector.png" alt="Instagram" class="social-icon" />
-        </a>
-  </div>
-  <div>
-    <img src="/public/bilder/alistair.webp" alt="Descriptive Alt Text" class="image" />
-  </div>
-</div>
+    <!-- FORM -->
+    <form action={submitEndpoint} method="post" enctype="multipart/form-data">
+        <div class="h2tattoo">
+            <h2>GET A TATTOO</h2>
+        </div>
+        <div class="p2tattoo">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, cum? Facilis expedita ea illo deserunt
+                aperiam! Sunt quaerat sapiente voluptates iusto ipsa reprehenderit impedit magni. Voluptatibus, delectus
+                sapiente! Sit, rem.</p>
+        </div>
+        <!-- Full Name -->
+        <label for="full-name">Full Name</label>
+        <input type="text" id="full-name" name="full_name" placeholder="Enter your full name" required />
 
-<div class="grid-container">
-  <div>
-    <img src="/public/bilder/anna.webp" alt="Descriptive Alt Text" class="image" />
-  </div>
-  <div class="text-content">
-    <h2>Anna Tietze Borregaard</h2>
-    <p>Your descriptive text goes here. You can write about the image or the topic in detail.</p>
-   <a href="/tattoo_gallery">
-<Buttum text="SEE MORE"/> </a>
-     <a href="https://www.instagram.com/tatietzetoo/">
-          <img src="/public/bilder/vector.png" alt="Instagram" class="social-icon" />
-        </a>
-  </div>
-</div>
+        <!-- Phone Number -->
+        <label for="phone-number">Phone Number</label>
+        <input type="tel" id="phone-number" name="phone_number" placeholder="Enter your phone number" required />
 
- <!-- FORM -->
-<form action={submitEndpoint} method="post" enctype="multipart/form-data">
-    <div class="h2tattoo"><h2>GET A TATTOO</h2></div>
-    <div class="p2tattoo"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, cum? Facilis expedita ea illo deserunt aperiam! Sunt quaerat sapiente voluptates iusto ipsa reprehenderit impedit magni. Voluptatibus, delectus sapiente! Sit, rem.</p></div>
-  <!-- Full Name -->
-  <label for="full-name">Full Name</label>
-  <input type="text" id="full-name" name="full_name" placeholder="Enter your full name" required />
+        <!-- Email Address -->
+        <label for="email-address">Email Address</label>
+        <input type="email" id="email-address" name="email_address" placeholder="Enter your email address" required />
 
-  <!-- Phone Number -->
-  <label for="phone-number">Phone Number</label>
-  <input type="tel" id="phone-number" name="phone_number" placeholder="Enter your phone number" required />
+        <!-- Tattoo Artist -->
+        <label for="tattoo-artist">Tattoo Artist</label>
+        <select id="tattoo-artist" name="tattoo_artist" required>
+            <option value="">Select your tattoo artist</option>
+            <option value="artist1">JACOB</option>
+            <option value="artist2">ALISTAIR</option>
+            <option value="artist3">ANNA</option>
+            <option value="artist3">Random</option>
+        </select>
 
-  <!-- Email Address -->
-  <label for="email-address">Email Address</label>
-  <input type="email" id="email-address" name="email_address" placeholder="Enter your email address" required />
-
-  <!-- Tattoo Artist -->
-  <label for="tattoo-artist">Tattoo Artist</label>
-  <select id="tattoo-artist" name="tattoo_artist" required>
-    <option value="">Select your tattoo artist</option>
-    <option value="artist1">JACOB</option>
-    <option value="artist2">ALISTAIR</option>
-    <option value="artist3">ANNA</option>
-     <option value="artist3">Random</option>
-  </select>
-
-  <!-- Tattoo Description -->
-  <label for="tattoo-description">Please Describe Your Tattoo</label>
-  <textarea id="tattoo-description" name="tattoo_description" rows="5" placeholder="Describe your tattoo idea" required></textarea>
+        <!-- Tattoo Description -->
+        <label for="tattoo-description">Please Describe Your Tattoo</label>
+        <textarea id="tattoo-description" name="tattoo_description" rows="5" placeholder="Describe your tattoo idea"
+            required></textarea>
 
 
-  <!-- Upload Photo -->
-  <label for="photo-upload">Upload Photo Inspiration</label>
-  <input type="file" id="photo-upload" name="photo_upload" accept="image/*" />
+        <!-- Upload Photo -->
+        <label for="photo-upload">Upload Photo Inspiration</label>
+        <input type="file" id="photo-upload" name="photo_upload" accept="image/*" />
 
-  <!-- Submit Button -->
-  <button type="submit">Submit Request</button>
-</form>
+        <!-- Submit Button -->
+        <button type="submit">Submit Request</button>
+    </form>
 
 
 
 
 
-<style>
-  
-@media (max-width: 800px){
-  
-    .grid-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-    align-items: center;
-    padding: 10px;
-    margin: 30px;
-  }
-  .middle-grid {
-    display: flex;
-    flex-direction: column; /* Stack the items vertically */
-  }
+    <style>
+        @media (max-width: 800px) {
 
-  .middle-grid .text-content {
-    order: 2; /* Move text after image */
-  }
+            .grid-container {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 1rem;
+                align-items: center;
+                padding: 10px;
+                margin: 30px;
+            }
 
-  .middle-grid .image {
-    order: 1; /* Make sure the image appears first */
-  }
-  
+            .text-content {
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+                align-items: flex-start;
+                /* Ensure the text aligns to the left */
+                justify-content: flex-start;
+                /* Start the content from the top */
+            }
 
-  .image {
-    width: 100%; /* Ensure image takes up full width on mobile */
-  }
-}
+            .middle-grid {
+                display: flex;
+                flex-direction: column;
+                /* Stack the items vertically */
+            }
 
-.H1tattoo {
-        text-align: center;
-    }
-.line {
-            width: 70%; 
-            height: 1px; 
-            background-color: black; 
-            margin: 20px auto; 
- }
-@media (min-width: 800px){
- .grid-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-    align-items: center;
-    padding: 40px;
-  }
-}
-  .ptattoo{
-    margin-top: 50px;
-    line-height: 250%;
-    padding:20px ;
-    margin-bottom: 50px;
-  }
+            .middle-grid .text-content {
+                order: 2;
+                /* Move text after image */
+            }
 
- .image {
-  width: 80%; 
-  height: auto; 
-  margin: 0 auto; 
-  display: block; 
-}
-
-  .text-content {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    align-items: flex-start;
-  }
-
-  .link {
-    color: #ab0000;;
-    text-decoration: none;
-    font-weight: bold;
-  }
-
-  .link:hover {
-    text-decoration: underline;
-  }
+            .middle-grid .image {
+                order: 1;
+                /* Make sure the image appears first */
+            }
 
 
-  form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    max-width: 600px;
-    margin: 0 auto;
-    font-family: Arial, sans-serif;
-    margin-top: 100px;
-    background-color: white;
-    padding: 30px;
-  border-radius: 8px; /* Rounded corners for a soft look */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
-  margin-bottom: 80px;
-  }
-  
-.h2tattoo{
-    text-align: center;
-    font-size: xx-large;
-    color: #ab0000;
-     font-optical-sizing: auto;
-  font-weight: weight;
-  font-style: normal;
-  font-variation-settings: "wdth" 100;
+            .image {
+                width: 100%;
+                /* Ensure image takes up full width on mobile */
+            }
+        }
 
-}
-.p2tattoo{
-     line-height: 300%;
-    padding:20px ;
-    font-family: "Noto Sans Mono", serif;
-  font-optical-sizing: auto;
-  font-weight: weight;
-  font-style: normal;
-  font-variation-settings: "wdth" 100;
-}
+        .H1tattoo {
+            text-align: center;
+            margin: 5%;
+        }
 
-  label {
-    font-weight: bold;
-  }
+        .line {
+           width: 80%;
+    height: 1px;
+    background-color: black;
+    margin: 20px auto;
+        }
 
-  input, textarea, select, button {
-    font-size: 1rem;
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    width: 100%;
-  }
+        @media (min-width: 800px) {
+            .grid-container {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
+                align-items: center;
+                padding: 40px;
+            }
+        }
 
-  button {
-  background-color: transparent; 
-  color: black; 
-  border: 1px solid black; 
-  cursor: pointer;
-  padding: 0.5rem 1rem; 
-  font-size: 1rem; 
-  border-radius: 5px; 
-}
-button:hover {
-  background-color: black; /* Black background on hover */
-  color: white; /* White text on hover */
-  border-color: black; /* Keep border black */
-}
-   
-</style>
+        .ptattoo {
+            margin-top: 50px;
+            line-height: 250%;
+            padding: 20px;
+            margin-bottom: 50px;
+        }
+
+        .image {
+            width: 80%;
+            height: auto;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .text-content {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            align-items: flex-start;
+            justify-content: flex-start;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            line-height: 250%;
+        }
+
+        .link {
+            color: #ab0000;
+            ;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .link:hover {
+            text-decoration: underline;
+        }
+
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 600px;
+            margin: 0 auto;
+            font-family: Arial, sans-serif;
+            margin-top: 100px;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            /* Rounded corners for a soft look */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            /* Light shadow for depth */
+            margin-bottom: 80px;
+        }
+
+        .h2tattoo {
+            text-align: center;
+            font-size: xx-large;
+            color: #ab0000;
+            font-optical-sizing: auto;
+            font-weight: weight;
+            font-style: normal;
+            font-variation-settings: "wdth" 100;
+
+        }
+
+        .p2tattoo {
+            line-height: 300%;
+            padding: 20px;
+            font-family: "Noto Sans Mono", serif;
+            font-optical-sizing: auto;
+            font-weight: weight;
+            font-style: normal;
+            font-variation-settings: "wdth" 100;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input,
+        textarea,
+        select,
+        button {
+            font-size: 1rem;
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        button {
+            background-color: transparent;
+            color: black;
+            border: 1px solid black;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: black;
+            /* Black background on hover */
+            color: white;
+            /* White text on hover */
+            border-color: black;
+            /* Keep border black */
+        }
+    </style>
 </MainLayout>

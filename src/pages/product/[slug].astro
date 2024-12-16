@@ -1,5 +1,6 @@
 ---
 import MainLayout from "../../layouts/MainLayout.astro";
+import Buttum from "../../components/Buttum.astro";
 //to make it dynamic
 export async function getStaticPaths() {
   const data = await fetch(
@@ -25,9 +26,12 @@ console.log(product);
 ---
 
 <MainLayout metatitle={product.Navn}>
+   
     <h1>WINE</h1>
        <div class="line"></div>
-
+<a href="/shop">
+        <Buttum text="BACK"></Button>
+      </a>
  <div class="product-container">
   <div class="image-container">
   <img src={product.imageURL} alt="img" />
@@ -120,7 +124,7 @@ console.log(product);
     padding: 1rem;
   }
   .image-container img {
-    width: 90%;
+    width: 95%;
   }
  h2 {
         color:#ab0000;

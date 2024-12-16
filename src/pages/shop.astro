@@ -1,6 +1,7 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import Card from "../components/Card.astro";
+import Buttum from "../components/Buttum.astro";
 
 // Hent data fra Supabase
 const data = await fetch(
@@ -24,9 +25,17 @@ console.log({ sparklingWines, orangeWines, whiteWines, redWines });
 ---
 
 <MainLayout metatitle="Vin">
+    <div class="header">
 
     <h1>SPARKLING WINE</h1>
     <div class="line"></div>
+    
+    <a class="knapp" href="/wine">
+        <Buttum text="BACK"></Button>
+
+      </a>
+      
+    </div>
     <section>
         {sparklingWines.map((product) => (
             <Card {...product} />
@@ -77,15 +86,16 @@ console.log({ sparklingWines, orangeWines, whiteWines, redWines });
 }
   h1 {
     text-align: center;
-    /* padding-top: 1.5rem; */
-    
-    
+    /* padding-top: 1.5rem; */    
   }
-
+.header {
+     margin: 5%;
+}
   section {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 2rem;
+    padding-bottom: 7rem;
   }
 
   a {
