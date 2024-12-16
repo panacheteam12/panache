@@ -3,6 +3,181 @@ import MainLayout from "../layouts/MainLayout.astro";
 ---
 
 <MainLayout metatitle="PANACHE">
-  <h1>lol</h1>
+
+    <div class="hero">
+    <img src="/public/bilder/forside.webp" alt="forside">
+    </div>
+
+ <div class="overskrift">
+    <h2>PANACHE</h2>
+<h3>GALLERY, WINE & TATTOO</h3>
+</div>
+
+<div class=" overskrift_forside">
+<div class="heyyou">
+    <h1>HEY YOU!</h1>
+</div>
+
+<hr class="linje">
+</div>
+
+<div class="tekst_forside">
+<p>Welcome to Panache! Located in the heart of Guldbergsgade, we’ve been creating a space where creativity, personality, and good vibes have come together since June 2024. <br> 
+We welcome everyone — whether you’re here to enjoy a glass of wine, immerse yourself in unique artworks, or consider getting a tattoo from one of our three dedicated artists. <br> <br>
+We keep it small and personal because that’s what makes Panache truly special. Cheers, and see you soon! </p>
+    </div>
+
+<div class="slideshow">
+        <div id="slider">
+            <img src="/public/bilder/slide1.webp" alt="Image 1">
+            <img src="/public/bilder/slide1.webp" alt="Image 2">
+            <img src="/public/bilder/slide1.webp" alt="Image 3">
+            <img src="/public/bilder/slide1.webp" alt="Image 4">
+            <img src="/public/bilder/slide1.webp" alt="Image 5">
+            <img src="/public/bilder/slide1.webp" alt="Image 6">
+            <img src="/public/bilder/slide1.webp" alt="Image 7">
+            <img src="/public/bilder/slide1.webp" alt="Image 8">
+            <img src="/public/bilder/slide1.webp" alt="Image 9">
+            <img src="/public/bilder/slide1.webp" alt="Image 10">
+        </div>
+    </div>
+
+    <div class="openinghours">
+        <p><strong>Opening hours:</strong><br> <br>
+Tuesday - Thursday: 15.00-23.00 <br> <br>
+Friday - Saturday: 15.00-00</p>
+    </div>
+
 </MainLayout>
 
+<style>
+
+.hero img {
+  width: 100%; /* Sørger for, at billedet fylder hele bredden */
+  height: 100%; /* Sørger for, at billedet fylder hele højden */
+  object-fit: cover; /* Holder billedets proportioner */
+}
+
+    .overskrift{
+  position: absolute; /* Gør det muligt at placere teksten ovenpå billedet */
+  top: 26%; /* Centrerer teksten vertikalt */
+  left: 50%; /* Centrerer teksten horisontalt */
+  transform: translate(-50%, -50%); /* Justerer teksten for præcis centrering */
+  display: flex;
+  flex-direction: column; /* Sørger for vertikal stak af teksten */
+  text-align: center;
+  color: white; /* Hvid tekst for kontrast */
+  gap: 10px; /* Afstand mellem h2 og h3 */
+  color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); Tilføjer skygge for læsevenlighed
+    }
+
+    .heyyou{
+        display: flex;
+  flex-direction: column; /* Sørger for vertikal stak af teksten */
+  text-align: center;
+
+    }
+
+    .heyyou h1 {
+        font-weight:400;
+    }
+
+    .linje {
+  width: 75%; /* Gør linjen kortere (20% af containerens bredde) */
+  height: 1px; /* Tykkelse af linjen */
+  margin: 10px auto; /* Centrer linjen horisontalt */
+}
+
+.overskrift_forside{
+    margin-top: 20px;
+}
+
+.tekst_forside{
+    margin: 30px;
+    font-size: small;
+      text-align: justify;
+}
+
+
+.slideshow {
+ width: 80%;
+overflow: hidden;
+margin: 0 auto;
+position: relative;
+padding-bottom: 5%;
+}
+.slideshow #slider {
+  display: flex;
+  width: 1000%; /* 10 billeder, 100% per billede */
+  animation: slide 20s infinite;
+}
+
+.slideshow #slider img {
+  width: 10%; /* Juster bredden for at passe til 10 billeder */
+  flex-shrink: 0;
+        }
+@keyframes slide {
+  0% { transform: translateX(0); }
+  10% { transform: translateX(0); }
+  20% { transform: translateX(-10%); }
+  30% { transform: translateX(-10%); }
+  40% { transform: translateX(-20%); }
+  50% { transform: translateX(-20%); }
+  60% { transform: translateX(-30%); }
+  70% { transform: translateX(-30%); }
+  80% { transform: translateX(-40%); }
+  90% { transform: translateX(-40%); }
+  100% { transform: translateX(-50%); }
+        }
+
+.openinghours {
+    display: flex;               /* Aktiver flexbox */
+    justify-content: center;     /* Centrerer horisontalt */
+    align-items: center;         /* Centrerer vertikalt */
+    text-align: center;          /* Centrerer teksten inde i elementet */
+    font-size: small;            /* Sætter fontstørrelsen */
+    margin-top: -10px;
+        margin-bottom: 50px;
+
+}
+
+@media (min-width: 1024px){
+    .overskrift{
+        font-size: 4vh;
+          top: 47%; /* Centrerer teksten vertikalt */
+    }
+
+    .hero img {
+          width: 100%;  /* Fylder hele bredden */
+  height: 100%;  /* Fylder hele højden */
+  object-fit: cover; /* Holder billedets proportioner */
+  margin-top: 20px;
+}
+
+.linje{
+    width: 50%; /* Gør linjen kortere (20% af containerens bredde) */
+
+}
+
+.tekst_forside{
+  margin-left: 170px;
+    margin-right: 170px;
+    margin-top: 30px;
+    line-height: 1.8; /* Øger linjeafstanden */
+}
+
+.slideshow #slider{
+  margin-top: 60px;
+}
+
+  .openinghours {
+        display: flex;              /* Aktivér flexbox */
+        justify-content: center;    /* Centrerer horisontalt */
+        align-items: center;        /* Centrerer vertikalt */
+        text-align: center;         /* Sørger for, at teksten er centreret */
+    }
+
+}
+
+</style>
