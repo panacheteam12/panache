@@ -1,8 +1,7 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-const imageSrc = '/path-to-your-image.jpg';
-const linkHref = '/your-link';
-export const submitEndpoint = "/api/submit-tattoo-request"; // Replace with your backend endpoint
+export const submitEndpoint = "/api/submit-tattoo-request"; 
+import Buttum from "../components/Buttum.astro";
 ---
 
 <MainLayout metatitle="PANACHE">
@@ -24,7 +23,8 @@ export const submitEndpoint = "/api/submit-tattoo-request"; // Replace with your
   <div class="text-content">
     <h2>Jacob Max Moltke</h2>
     <p>Your descriptive text goes here. You can write about the image or the topic in detail.</p>
-    <a href={linkHref} class="link">Read More</a>
+  <a href="/tattoo_gallery">
+<Buttum text="SEE MORE"/> </a>
     <a href="https://www.instagram.com/maxmoltke/">
           <img src="/public/bilder/vector.png" alt="Instagram" class="social-icon" />
         </a>
@@ -35,7 +35,8 @@ export const submitEndpoint = "/api/submit-tattoo-request"; // Replace with your
   <div class="text-content">
     <h2>Alistair</h2>
     <p>Your descriptive text goes here. You can write about the image or the topic in detail.</p>
-    <a href={linkHref} class="link">Read More</a>
+   <a href="/tattoo_gallery">
+<Buttum text="SEE MORE"/> </a>
     <a href="https://www.instagram.com/alistairtattoos/">
           <img src="/public/bilder/vector.png" alt="Instagram" class="social-icon" />
         </a>
@@ -52,7 +53,8 @@ export const submitEndpoint = "/api/submit-tattoo-request"; // Replace with your
   <div class="text-content">
     <h2>Anna Tietze Borregaard</h2>
     <p>Your descriptive text goes here. You can write about the image or the topic in detail.</p>
-    <a href={linkHref} class="link">Read More</a>
+   <a href="/tattoo_gallery">
+<Buttum text="SEE MORE"/> </a>
      <a href="https://www.instagram.com/tatietzetoo/">
           <img src="/public/bilder/vector.png" alt="Instagram" class="social-icon" />
         </a>
@@ -105,7 +107,7 @@ export const submitEndpoint = "/api/submit-tattoo-request"; // Replace with your
 <style>
   
 @media (max-width: 800px){
-    
+  
     .grid-container {
     display: grid;
     grid-template-columns: 1fr;
@@ -135,15 +137,12 @@ export const submitEndpoint = "/api/submit-tattoo-request"; // Replace with your
 
 .H1tattoo {
         text-align: center;
-        font-size: xx-large;
-        margin-top: 100px;
     }
 .line {
             width: 70%; 
             height: 1px; 
             background-color: black; 
             margin: 20px auto; 
-            margin-top: 50px;
  }
 @media (min-width: 800px){
  .grid-container {
