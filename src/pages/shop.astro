@@ -32,25 +32,30 @@ console.log({ sparklingWines, orangeWines, whiteWines, redWines });
             <Card {...product} />
         ))}
     </section>
-
+<div class="h1oglinje">
     <h1>ORANGE WINE</h1>
     <div class="line"></div>
+    </div>
     <section>
         {orangeWines.map((product) => (
             <Card {...product} />
         ))}
     </section>
 
+<div class="h1oglinje">
     <h1>WHITE WINE</h1>
     <div class="line"></div>
+    </div>
     <section>
         {whiteWines.map((product) => (
             <Card {...product} />
         ))}
     </section>
 
+<div class="h1oglinje">
     <h1>RED WINE</h1>
     <div class="line"></div>
+    </div>
     <section>
         {redWines.map((product) => (
             <Card {...product} />
@@ -66,10 +71,15 @@ console.log({ sparklingWines, orangeWines, whiteWines, redWines });
     background-color: black;
     margin: 20px auto;
   }
-
+.h1oglinje {
+    margin-top: 2rem;
+    padding-bottom: 2rem;
+}
   h1 {
     text-align: center;
-    padding-top: 1.5rem;
+    /* padding-top: 1.5rem; */
+    
+    
   }
 
   section {
