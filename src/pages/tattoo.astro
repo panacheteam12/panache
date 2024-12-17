@@ -1,9 +1,9 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import Buttum from "../components/Buttum.astro";
 const imageSrc = '/path-to-your-image.jpg';
 const linkHref = '/your-link';
 const {text} = Astro.props;
+import Buttum from "../components/Buttum.astro";
 export const submitEndpoint = "/api/submit-tattoo-request"; // Replace with your backend endpoint
 ---
 
@@ -11,22 +11,21 @@ export const submitEndpoint = "/api/submit-tattoo-request"; // Replace with your
     <!-- Overskrift, linje og tekst -->
     <div class="H1tattoo">
         <h1>TATTOO ARTISTS</h1>
-    
-    <div class="line"></div>
     </div>
+    <div class="line"></div>
 
     <p class="ptattoo">
         Step into Panache’s tattoo studio, where creativity meets individuality, and every design tells a story—yours!
         With
         three talented, resident tattoo artists, this is not your average tattoo joint. Our small but mighty team keeps
         it
-        personal, keeping the vibe chill, inspiring, and brimming with creativity.
+        personal, keeping the vibe chill, inspiring, and brimming with creativity.<br><br>
 
         Whether you're after something bold, intricate, or downright quirky, our artists are here to bring your vision
         to life.
         Each tattoo session is by appointment only because we believe in giving every masterpiece the time and attention
         it
-        deserves. Slide into our DMs on Instagram to book your spot and let’s create something unforgettable!
+        deserves. <br><br>Slide into our DMs on Instagram to book your spot and let’s create something unforgettable!
 
         At Panache, tattoos aren’t just ink—they’re art, memories, and a reflection of you. Plus, with wine and art just
         steps
@@ -36,63 +35,59 @@ export const submitEndpoint = "/api/submit-tattoo-request"; // Replace with your
     <!-- Tattooo Artist / grdi_container -->
     <div class="grid-container">
         <div>
-            <img src="/public/bilder/jacob.webp" alt="Descriptive Alt Text" class="image" />
+            <img src="/bilder/jacob.webp" alt="Descriptive Alt Text" class="image" />
         </div>
         <div class="text-content">
-            <h2>Jacob Max Moltke</h2>
+            <h2 class="navn">Jacob Max Moltke</h2>
             <p>Jacob isn’t just a tattoo artist; they’re a storyteller with a needle. Known for bold lines and striking
                 designs, Jacob
-                specializes in blackwork and abstract pieces that turn skin into wearable art. If you want a tattoo that
+                specializes in blackwork and abstract pieces that turn skin into wearable art.<br><br> If you want a tattoo that
                 stands out and
-                sparks conversation, Jacob is your go-to. Whether it’s a minimalist statement or a full-sleeve
+                sparks conversation, Jacob is your go-to.<br><br> Whether it’s a minimalist statement or a full-sleeve
                 masterpiece, they’ll make
                 sure your ink speaks volumes.</p>
 
-            <div class="button-container">
-            
-        <Buttum text="@maxmoltke"></Buttum>
-      </a>
+              <a class="Buttum" href="https://www.instagram.com/maxmoltke/">
+<Buttum  text="@maxmoltke"> </Buttum>
+</a>
             </div>
         </div>
     </div>
 
     <div class="grid-container middle-grid">
         <div class="text-content">
-            <h2>Alistair</h2>
-            <p>Alistair is all about bringing color and fun to your tattoo dreams. From vibrant watercolor effects to
+            <h2 class="navn">Alistair</h2>
+            <p>Alistair is all about bringing color and fun to your tattoo dreams.<br><br> From vibrant watercolor effects to
                 playful, illustrative
-                designs, Alistair´s swork is perfect for those who want their personality to shine through their ink.
+                designs, Alistair´s swork is perfect for those who want their personality to shine through their ink.<br><br>
                 With a love for bold
                 hues and creative storytelling, Alistair´ tattoos are as lively and unique as the clients who wear them.
             </p>
-            
-                    <a href="https://www.instagram.com/alistairtattoos/">
-        <Buttum text="@alistairtattoos"></Buttum>
-      </a>
-            </div>
+               <a class="Buttum" href="https://www.instagram.com/alistairtattoos/">
+<Buttum  text=" @alistairtattoos"> </Buttum>
+</a>
+           
         </div>
         <div>
-            <img src="/public/bilder/alistair.webp" alt="Descriptive Alt Text" class="image" />
+            <img src="/bilder/alistair.webp" alt="Descriptive Alt Text" class="image" />
         </div>
     </div>
 
     <div class="grid-container">
         <div>
-            <img src="/public/bilder/anna.webp" alt="Descriptive Alt Text" class="image" />
+            <img src="/bilder/anna.webp" alt="Descriptive Alt Text" class="image" />
         </div>
         <div class="text-content">
-            <h2>Anna Tietze Borregaard</h2>
+            <h2  class="navn">Anna Tietze Borregaard</h2>
             <p>Anna is the queen of precision and detail. Her expertise lies in delicate fine-line tattoos, floral
                 motifs, and intricate
-                patterns. Looking for something elegant, soft, and timeless? Anna´s got you covered. Her steady hand and
+                patterns.<br><br> Looking for something elegant, soft, and timeless? Anna´s got you covered. <br><br>Her steady hand and
                 artistic eye
                 bring even the smallest details to life, ensuring your tattoo feels personal and unique.</p>
-            <div class="button-container">
-               
-<a href="https://www.instagram.com/tatietzetoo/">
-        <Buttum text="@tatietzetoo"></Buttum>
-      </a>
-            </div>
+                  <a class="Buttum" href="https://www.instagram.com/tatietzetoo/">
+<Buttum  text="@tatietzetoo"> </Buttum>
+</a>
+           
         </div>
         </a>
     </div>
@@ -104,9 +99,14 @@ export const submitEndpoint = "/api/submit-tattoo-request"; // Replace with your
             <h2>GET A TATTOO</h2>
         </div>
         <div class="p2tattoo">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, cum? Facilis expedita ea illo deserunt
-                aperiam! Sunt quaerat sapiente voluptates iusto ipsa reprehenderit impedit magni. Voluptatibus, delectus
-                sapiente! Sit, rem.</p>
+            <p>Ready to bring your tattoo idea to life? Fill out the form to request an appointment with one of our talented artists. Share your vision, describe your tattoo idea, and upload any inspiration photos. Once submitted, we’ll get back to you to confirm details and discuss the next steps. Let’s create something unforgettable together!
+
+
+
+
+
+
+</p>
         </div>
         <!-- Full Name -->
         <label for="full-name">Full Name</label>
@@ -141,11 +141,11 @@ export const submitEndpoint = "/api/submit-tattoo-request"; // Replace with your
         <input type="file" id="photo-upload" name="photo_upload" accept="image/*" />
 
         <!-- Submit Button -->
-        <button type="submit">Submit Request</button>
+ <Buttum  text="Submit Request"> </Buttum>
     </form>
 
 
-
+</MainLayout>
 
 
     <style>
@@ -154,7 +154,7 @@ export const submitEndpoint = "/api/submit-tattoo-request"; // Replace with your
             .grid-container {
                 display: grid;
                 grid-template-columns: 1fr;
-                gap: 1rem;
+                gap: 2rem;
                 align-items: center;
                 padding: 10px;
                 margin: 30px;
@@ -165,9 +165,8 @@ export const submitEndpoint = "/api/submit-tattoo-request"; // Replace with your
                 flex-direction: column;
                 gap: 0.5rem;
                 align-items: flex-start;
-                /* Ensure the text aligns to the left */
                 justify-content: flex-start;
-                /* Start the content from the top */
+               
             }
 
             .middle-grid {
@@ -195,14 +194,15 @@ export const submitEndpoint = "/api/submit-tattoo-request"; // Replace with your
 
         .H1tattoo {
             text-align: center;
-            margin: 5%;
+           
         }
 
         .line {
-           width: 80%;
-    height: 1px;
-    background-color: black;
-    margin: 20px auto;
+            width: 70%;
+            height: 1px;
+            background-color: black;
+            margin: 20px auto;
+          
         }
 
         @media (min-width: 800px) {
@@ -217,7 +217,6 @@ export const submitEndpoint = "/api/submit-tattoo-request"; // Replace with your
 
         .ptattoo {
             margin-top: 50px;
-            line-height: 250%;
             padding: 20px;
             margin-bottom: 50px;
         }
@@ -238,7 +237,11 @@ export const submitEndpoint = "/api/submit-tattoo-request"; // Replace with your
             height: 100%;
             margin: 0;
             padding: 0;
-            line-height: 250%;
+           
+         
+        }
+        .navn{
+            color: #ab0000;
         }
 
         .link {
@@ -282,7 +285,7 @@ export const submitEndpoint = "/api/submit-tattoo-request"; // Replace with your
         }
 
         .p2tattoo {
-            line-height: 300%;
+            
             padding: 20px;
             font-family: "Noto Sans Mono", serif;
             font-optical-sizing: auto;
@@ -293,36 +296,19 @@ export const submitEndpoint = "/api/submit-tattoo-request"; // Replace with your
 
         label {
             font-weight: bold;
+            font-family: "Noto Sans Mono", serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
         }
 
-        input,
-        textarea,
-        select,
-        button {
-            font-size: 1rem;
-            padding: 0.5rem;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            width: 100%;
-        }
+   
+.Buttum{
+ display: flex;
+  margin: 0 auto;
+  align-items: flex-end; /* Pushes content to the bottom */
+  height: 100%;
+}
 
-        button {
-            background-color: transparent;
-            color: black;
-            border: 1px solid black;
-            cursor: pointer;
-            padding: 0.5rem 1rem;
-            font-size: 1rem;
-            border-radius: 5px;
-        }
-
-        button:hover {
-            background-color: black;
-            /* Black background on hover */
-            color: white;
-            /* White text on hover */
-            border-color: black;
-            /* Keep border black */
-        }
     </style>
-</MainLayout>
